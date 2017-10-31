@@ -5,7 +5,7 @@ import {
 import React from 'react';
 
 import Main from './js/login'
-import Home from './js/index.android2'
+import Home from './js/HomePage'
 /*
  * ≥ı ºªØStackNavigator
  */

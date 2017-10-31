@@ -58,48 +58,8 @@ class LoginPage extends Component {
     }
 
     doLogin() {
-        var url = REQUEST_URL + '?' + 'userName=' + this.state.userName + '&' + 'password=' + this.state.password
-        fetch(url)
-            .then((response) => {
-                return response.json()
-            })
-            .catch((error) => console.warn("fetch error:", error))
-            .then((responseData) => {
-                try {
-
-                    if (true == responseData.Result) {
-                        NativeModules.LoginRNToNativeModule.HandleMessage('js@' + JSON.stringify(responseData));
-                        const { navigate } = this.props.navigation;
-                        navigate('Home');
-                        // 登录成功存储用户名密码
-                        AsyncStorage.setItem('userName', this.state.userName, function (err) {
-                            if (err) {
-                                //存储出错
-                            }
-                            else {
-                                //保存成功
-                            }
-                        });
-                        AsyncStorage.setItem('passworld', this.state.password, function (err) {
-                            if (err) {
-                                //存储出错
-                            }
-                            else {
-                                //保存成功
-                            }
-                        });
-
-
-                    }
-                    else {
-                        NativeModules.LoginRNToNativeModule.HandleMessageError(responseData.Message);
-                    }
-                }
-                catch (e) {
-                    NativeModules.LoginRNToNativeModule.HandleMessageError("尝试登录失败，请您检查网路");
-                }
-            })
-            .done();
+        const { navigate } = this.props.navigation;
+        navigate('Home');
     }
 
     render() {
