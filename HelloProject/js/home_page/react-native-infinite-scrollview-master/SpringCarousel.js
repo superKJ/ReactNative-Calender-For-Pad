@@ -326,12 +326,7 @@ class SpringCarousel extends Component {
         return (
 
             <View style={styles.mainViewStyle}>
-                <View style={{width:120,height:628,backgroundColor:'#cc0000'}}>
 
-                    <Image source={require('../../../img/week_left_title2.png')} resizeMode={'contain'}
-                           style={{width:120,height:628,position:'absolute'}}/>
-
-                </View>
 
 
                 <ViewPagerAndroid
@@ -351,7 +346,8 @@ class SpringCarousel extends Component {
 }
 var screenWidth = Dimensions.get('window').width;
 var screenheight = Dimensions.get('window').height;
-const leftMenuWidth = 60;
+//周日期控件距离左侧的距离
+const leftMenuWidth = 0;
 const styles = StyleSheet.create({
     mainViewStyle: {
         flex: 1,
